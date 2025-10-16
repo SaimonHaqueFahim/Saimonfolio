@@ -1,0 +1,231 @@
+/* Custom CSS for animations */
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Neon glow effect */
+.neon-glow {
+    text-shadow: 0 0 10px #00ffff; /* Simplified to a single, softer glow */
+}
+
+/* Typing animation common */
+.typing-line {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+}
+
+/* Ensure the typing elements don't cause horizontal movement for siblings */
+.typing-line {
+    max-width: fit-content;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #00ffff; }
+}
+
+/* Specific typing for line1 */
+@keyframes typing1 {
+    0% { width: 0; }
+    100% { width: 6ch; }
+}
+
+/* Specific typing for line2 */
+@keyframes typing2 {
+    0% { width: 0; }
+    100% { width: 24ch; }
+}
+
+/* Specific typing for line3 */
+@keyframes typing3 {
+    0% { width: 0; }
+    100% { width: 26ch; }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px; /* Adjust this for your site’s width */
+  height: 80px;
+  box-sizing: border-box;
+}
+
+
+/* Logo styling */
+.portfolio-logo {
+    height: 40px; /* Matches navbar height */
+    width: auto;
+    max-height: 40px; /* Ensure it doesn't exceed navbar height */
+    object-fit: contain; /* Maintains aspect ratio while fitting */
+    transition: transform 0.3s ease;
+    position: relative; /* Enable relative positioning */
+    left: 10 !important;
+}
+
+.portfolio-logo:hover {
+    transform: scale(1.05); /* Slight scale on hover for interactivity */
+}
+
+/* Sci-fi banner background animation */
+.banner-bg {
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0a;
+}
+
+.banner-bg::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,255,255,0.15) 0%, transparent 50%);
+    animation: rotate-bg 30s linear infinite;
+    z-index: 0;
+    opacity: 0.8;
+}
+
+@keyframes rotate-bg {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Subtle flowing grid for sci-fi feel */
+.banner-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(0deg, transparent 0, transparent 49px, rgba(0,255,255,0.03) 49px, rgba(0,255,255,0.03) 50px),
+        repeating-linear-gradient(90deg, transparent 0, transparent 49px, rgba(0,255,255,0.03) 49px, rgba(0,255,255,0.03) 50px);
+    background-size: 50px 50px;
+    animation: move-grid 40s linear infinite;
+    z-index: 0;
+    opacity: 0.7;
+}
+
+@keyframes move-grid {
+    0% { background-position: 0 0, 0 0; }
+    100% { background-position: 50px 0, 0 50px; }
+}
+
+/* Hover animation for buttons and links */
+.hover-animate {
+    transition: all 0.3s ease;
+}
+
+.hover-animate:hover {
+    transform: scale(1.05); /* Only scale, no box-shadow */
+    color: #00ffff; /* Brighten text on hover for feedback */
+}
+
+/* Remove focus outline and add custom focus style */
+.hover-animate:focus {
+    outline: none;
+    text-shadow: 0 0 5px #00ffff; /* Subtle glow for accessibility */
+}
+
+.typing-line:focus {
+    outline: none;
+    text-shadow: 0 0 5px #00ffff; /* Subtle glow for accessibility */
+}
+
+/* Layout fixes */
+.banner-content {
+    position: relative;
+    z-index: 10;
+    height: 100%; /* Match the parent section height */
+    padding-bottom: 0; /* Remove any potential bottom padding */
+    margin-bottom: 0; /* Remove any potential bottom margin */
+}
+
+.welcome-text {
+    position: relative;
+    z-index: 10;
+}
+
+.professional-photo {
+    position: absolute;
+    right: 0;
+    bottom: 0; /* Ensure image bottom aligns with container bottom */
+    height: 85vh; /* Adjusted to fit without gap */
+    width: auto;
+    object-fit: cover; /* Fill height while maintaining aspect ratio */
+    z-index: 10;
+}
+
+/* Slide menu styling */
+.slide-menu {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    border: 1px solid #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    animation: slideDown 0.3s ease-out;
+}
+
+.slide-menu a {
+    color: #00ffff;
+    transition: all 0.3s ease;
+}
+
+.slide-menu a:hover {
+    background: #00ffff;
+    color: #0a0a0a;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .welcome-text {
+        margin-bottom: 2rem;
+    }
+
+    .professional-photo {
+        position: static;
+        max-width: 80%;
+        margin: 0 auto;
+        height: auto; /* Reset for mobile */
+        max-height: 60vh;
+    }
+
+    .typing-line {
+        font-size: 3rem;
+    }
+
+    .line3 {
+        font-size: 1.5rem;
+    }
+
+    .slide-menu {
+        width: 100%;
+        left: 0;
+    }
+}
+
+/* Navigation bar adjustments */
+nav .flex {
+    margin-left: -2rem; /* Shift links to the left while preserving spacing */
+}
