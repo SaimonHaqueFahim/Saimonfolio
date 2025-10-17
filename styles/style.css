@@ -169,16 +169,39 @@ nav {
     border: 1px solid #00ffff;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
     animation: slideDown 0.3s ease-out;
+    overflow: hidden; /* Clips hover backgrounds to rounded corners */
+    border-radius: 0.75rem; /* Slightly larger for smoother look */
+    transition: box-shadow 0.3s ease; /* For glow on hover */
+}
+
+.slide-menu:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.7); /* Subtle glow for attractiveness */
 }
 
 .slide-menu a {
     color: #00ffff;
     transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1); /* Subtle separator between items */
+}
+
+.slide-menu a:last-child {
+    border-bottom: none; /* No separator on last item */
 }
 
 .slide-menu a:hover {
     background: #00ffff;
     color: #0a0a0a;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes slideDown {

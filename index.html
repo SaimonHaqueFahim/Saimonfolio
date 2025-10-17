@@ -31,21 +31,15 @@
       rel="stylesheet"
     />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="icons/tab-logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/about.css" />
+    <link rel="shortcut icon" href="images/icons/tab-logo.png" type="image/x-icon" />
   </head>
   <body class="bg-dark-bg text-dark-text">
     <!-- Navigation Bar -->
     <nav class="fixed top-0 left-0 w-full bg-dark-bg shadow-md z-50">
       <div
-        class="container mx-auto px-4 py-6 flex justify-between items-center"
-        Increased
-        py-6
-        for
-        more
-        height
-        --
-      >
+        class="container mx-auto px-4 py-6 flex justify-between items-center">
         <!-- Logo -->
         <a href="#home" class="flex items-center pl-4">
           <img
@@ -61,7 +55,7 @@
           <div class="relative group">
             <a href="#" class="hover-animate neon-glow">Projects</a>
             <div
-              class="slide-menu hidden group-hover:block absolute top-full mt-2 w-32 bg-dark-bg border border-neon-blue rounded-lg shadow-lg"
+              class="slide-menu hidden group-hover:block absolute top-full w-32 bg-dark-bg border border-neon-blue rounded-lg shadow-lg"
             >
               <a
                 href="frontend.html"
@@ -137,22 +131,6 @@
     </section>
 
     <!-- Placeholder Sections -->
-    <section id="about" class="py-20">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-sci-fi neon-glow mb-8 text-center">About</h2>
-        <!-- Add content later -->
-      </div>
-    </section>
-
-    <section id="projects" class="py-20 bg-gray-900">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-sci-fi neon-glow mb-8 text-center">
-          Projects
-        </h2>
-        <!-- Add content later -->
-      </div>
-    </section>
-
     <section id="skills" class="py-20">
       <div class="container mx-auto px-4">
         <h2 class="text-4xl font-sci-fi neon-glow mb-8 text-center">Skills</h2>
@@ -169,12 +147,127 @@
       </div>
     </section>
 
-    <section id="contact" class="py-20">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-sci-fi neon-glow mb-8 text-center">Contact</h2>
-        <!-- Add content later -->
+
+    <!-- Footer -->
+    <footer
+      class="bg-dark-bg border-t border-neon-blue py-16 mt-16 relative overflow-hidden"
+    >
+      <div
+        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left"
+      >
+        <!-- Left: Logo and info -->
+        <div class="flex flex-col items-center md:items-start space-y-4">
+          <a href="index.html">
+            <img
+              src="images/portfolio_logo.png"
+              alt="Saimon Logo"
+              class="h-14 w-auto neon-logo hover:scale-110 transition-transform duration-300"
+            />
+          </a>
+          <p class="text-sm text-dark-text max-w-xs leading-relaxed">
+            © 2025
+            <span class="text-neon-blue font-sci-fi">Saimon Haque Fahim</span>.
+            All Rights Reserved.
+          </p>
+        </div>
+
+        <!-- Middle: Socials + Contact Form -->
+        <div class="flex flex-col items-center space-y-6">
+          <div class="space-y-3">
+            <h3 class="text-lg font-sci-fi neon-glow">Let's Connect</h3>
+            <div class="flex space-x-5 justify-center">
+              <a href="https://facebook.com/" target="_blank">
+                <img
+                  src="images/icons/facebook-logo.png"
+                  alt="Facebook"
+                  class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
+                />
+              </a>
+              <a href="https://instagram.com/" target="_blank">
+                <img
+                  src="images/icons/instagram-logo.png"
+                  alt="Instagram"
+                  class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
+                />
+              </a>
+              <a href="https://linkedin.com/" target="_blank">
+                <img
+                  src="images/icons/linkedin-logo.png"
+                  alt="LinkedIn"
+                  class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
+                />
+              </a>
+              <a href="https://github.com/" target="_blank">
+                <img
+                  src="images/icons/github-logo.png"
+                  alt="GitHub"
+                  class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
+                />
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div
+            class="w-full max-w-sm bg-black/40 p-6 rounded-2xl shadow-[0_0_20px_#00ffff20]"
+          >
+            <h3
+              class="text-2xl font-sci-fi text-neon-blue text-center mb-5 tracking-wide"
+            >
+              Let's Inbox Me
+            </h3>
+            <form>
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="footer-input"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                class="footer-input"
+                required
+              />
+              <textarea
+                placeholder="Your Message"
+                rows="3"
+                class="footer-input"
+                required
+              ></textarea>
+              <button type="submit" class="footer-btn">SUBMIT</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right: Quick Links -->
+        <div class="flex flex-col items-center md:items-end space-y-2">
+          <h3 class="text-lg font-sci-fi neon-glow mb-2">Quick Links</h3>
+          <a href="index.html" class="hover:text-neon-blue transition">Home</a>
+          <a href="about.html" class="hover:text-neon-blue transition">About</a>
+          <a href="frontend.html" class="hover:text-neon-blue transition"
+            >Frontend</a
+          >
+          <a href="qa.html" class="hover:text-neon-blue transition">QA</a>
+          <a href="contact.html" class="hover:text-neon-blue transition"
+            >Contact</a
+          >
+        </div>
       </div>
-    </section>
+
+      <!-- Bottom -->
+      <div
+        class="mt-10 text-center text-xs text-gray-400 border-t border-gray-700 pt-4"
+      >
+        Designed & Developed by
+        <span class="text-neon-blue">Saimon Haque Fahim</span>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
 
     <!-- JavaScript -->
     <script src="script.js"></script>
