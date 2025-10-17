@@ -50,7 +50,7 @@
         </a>
         <!-- Nav Links -->
         <div class="flex space-x-6 relative">
-          <a href="#" class="hover-animate neon-glow">Home</a>
+          <a href="index.html" class="hover-animate neon-glow">Home</a>
           <a href="about.html" class="hover-animate neon-glow">About</a>
           <div class="relative group">
             <a href="#" class="hover-animate neon-glow">Projects</a>
@@ -201,9 +201,125 @@
         <h2 class="text-4xl font-sci-fi neon-glow mb-8 text-center">
           Achievements
         </h2>
-        <!-- Add content later -->
+        <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- Certificate Card -->
+      <div class="swiper-slide">
+        <a href="images/Achievements/cisco.jpg" target="_blank">
+          <div class="cert-card">
+            <img src="images/Achievements/cisco.jpg" alt="Certificate 1">
+            <div class="overlay">View Certificate</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="images/Achievements/Cybersecurity.PNG" target="_blank">
+          <div class="cert-card">
+            <img src="images/Achievements/Cybersecurity.PNG" alt="Certificate 2">
+            <div class="overlay">View Certificate</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="images/Achievements/python.PNG" target="_blank">
+          <div class="cert-card">
+            <img src="images/Achievements/python.PNG" alt="Certificate 2">
+            <div class="overlay">View Certificate</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="images/Achievements/ph.jpg" target="_blank">
+          <div class="cert-card">
+            <img src="images/Achievements/ph.jpg" alt="Certificate 2">
+            <div class="overlay">View Certificate</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="images/Achievements/uixi.PNG" target="_blank">
+          <div class="cert-card">
+            <img src="images/Achievements/uixi.PNG" alt="Certificate 2">
+            <div class="overlay">View Certificate</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="images/Achievements/wd.jpg" target="_blank">
+          <div class="cert-card">
+            <img src="images/Achievements/wd.jpg" alt="Certificate 2">
+            <div class="overlay">View Certificate</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="images/Achievements/de.jpg" target="_blank">
+          <div class="cert-card">
+            <img src="images/Achievements/de.jpg" alt="Certificate 2">
+            <div class="overlay">View Certificate</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="images/Achievements/IELTS.jpg" target="_blank">
+          <div class="cert-card">
+            <img src="images/Achievements/IELTS.jpg" alt="Certificate 2">
+            <div class="overlay">View Certificate</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="swiper-slide">
+        <a href="images/Achievements/abc.jpg" target="_blank">
+          <div class="cert-card">
+            <img src="images/Achievements/abc.jpg" alt="Certificate 2">
+            <div class="overlay">View Certificate</div>
+          </div>
+        </a>
+      </div>
+      <!-- Repeat for all -->
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
       </div>
     </section>
+
+    <script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+  
+</script>
 
 
     <!-- Footer -->
