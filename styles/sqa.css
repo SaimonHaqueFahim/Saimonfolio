@@ -1,0 +1,47 @@
+/* qa.css */
+/* Project Card Styling */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.7); /* Enhanced neon glow on hover */
+}
+
+.project-thumbnail img {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-thumbnail img {
+  transform: scale(1.05);
+}
+
+/* Details Section */
+.project-details {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Process Steps */
+.process-step {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Canvas Charts */
+canvas {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: 1fr; /* Stack cards vertically on mobile */
+  }
+}

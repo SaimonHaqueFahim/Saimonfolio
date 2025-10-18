@@ -1,0 +1,531 @@
+<!-- qa.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQA Projects - Saimon Haque Fahim</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "neon-blue": "#00ffff",
+              "neon-green": "#00ff00",
+              "dark-bg": "#0a0a0a",
+              "dark-text": "#e0e0e0",
+            },
+            fontFamily: {
+              "sci-fi": ["Orbitron", "sans-serif"],
+              body: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google Fonts for Sci-fi feel -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/qa.css" />
+    <link rel="stylesheet" href="styles/about.css" />
+    <link
+      rel="shortcut icon"
+      href="images/icons/tab-logo.png"
+      type="image/x-icon"
+    />
+    <!-- Chart.js for example charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="bg-dark-bg text-dark-text">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full bg-dark-bg shadow-md z-50">
+      <div
+        class="container mx-auto px-4 py-6 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <a href="#home" class="flex items-center pl-4">
+          <img
+            src="images/portfolio_logo.png"
+            alt="logo"
+            class="portfolio-logo"
+          />
+        </a>
+        <!-- Nav Links -->
+        <div class="flex space-x-6 relative">
+          <a href="index.html" class="hover-animate neon-glow">Home</a>
+          <a href="about.html" class="hover-animate neon-glow">About</a>
+          <div class="relative group">
+            <a href="#" class="hover-animate neon-glow">Projects</a>
+            <div
+              class="slide-menu hidden group-hover:block absolute top-full w-32 bg-dark-bg border border-neon-blue rounded-lg shadow-lg"
+            >
+              <a
+                href="frontend.html"
+                class="block px-4 py-2 text-neon-blue hover:bg-neon-blue hover:text-dark-bg transition-colors duration-200"
+                >Frontend</a
+              >
+              <a
+                href="sqa.html"
+                class="block px-4 py-2 text-neon-blue hover:bg-neon-blue hover:text-dark-bg transition-colors duration-200"
+                >QA</a
+              >
+            </div>
+          </div>
+          <a href="index.html" class="hover-animate neon-glow">Skills</a>
+          <a href="index.html" class="hover-animate neon-glow">Achievements</a>
+          <a href="contact.html" class="hover-animate neon-glow">Contact</a>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=mshfahim12@gmail.com&su=Job Opportunity&body=Hello Saimon, I am interested in hiring you."
+            target="_blank"
+            class="hover-animate neon-glow"
+            >Hire Me</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- SQA Projects Section -->
+    <section id="qa-projects" class="py-20 relative overflow-hidden pt-32">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-5xl font-sci-fi neon-glow mb-16 text-center animate-fadeIn"
+        >
+          SQA Projects
+        </h2>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Card 1 -->
+          <div
+            class="project-card bg-dark-bg border border-neon-blue rounded-lg p-6 shadow-neon hover:shadow-xl transition-all duration-300 animate-slideUp"
+          >
+            <div class="project-thumbnail mb-4">
+              <img
+                src="images/sqa/aerotrip-ss2.PNG"
+                alt="E-Commerce Platform Testing"
+                class="w-full h-48 object-cover rounded-md"
+              />
+            </div>
+            <h3 class="text-2xl font-sci-fi neon-glow mb-4 text-center">
+              E-Commerce Platform Testing
+            </h3>
+            <p class="text-center mb-4">
+              Conducted comprehensive testing for a high-traffic e-commerce web
+              app to ensure seamless functionality and user experience.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-6">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png"
+                alt="Selenium"
+                class="h-10 w-10 object-contain"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Jira_Logo.svg/1280px-Jira_Logo.svg.png"
+                alt="Jira"
+                class="h-10 w-10 object-contain"
+              />
+              <img
+                src="images/logos/postman.png"
+                alt="Postman"
+                class="h-10 w-10 object-contain"
+              />
+            </div>
+            <button
+              onclick="toggleDetails('project1')"
+              class="block mx-auto px-6 py-2 bg-transparent border-2 border-neon-blue text-neon-blue font-bold rounded hover-animate"
+            >
+              View Details
+            </button>
+            <div id="project1" class="project-details hidden mt-6">
+              <h4 class="text-xl font-sci-fi neon-glow mb-2">
+                Role & Responsibilities
+              </h4>
+              <ul class="list-disc pl-6 mb-4">
+                <li>
+                  Designed and executed 150+ test cases for functional and
+                  regression testing.
+                </li>
+                <li>Automated UI tests using Selenium and Python.</li>
+                <li>Tracked defects in Jira, reducing bug leakage by 25%.</li>
+              </ul>
+              <h4 class="text-xl font-sci-fi neon-glow mb-2">Achievements</h4>
+              <ul class="list-disc pl-6 mb-4">
+                <li>Improved test coverage by 30%.</li>
+                <li>Reduced manual testing time by 40% via automation.</li>
+              </ul>
+              <h4 class="text-xl font-sci-fi neon-glow mb-2">
+                Bug Tracking Chart
+              </h4>
+              <canvas id="chart1" class="w-full h-64"></canvas>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div
+            class="project-card bg-dark-bg border border-neon-blue rounded-lg p-6 shadow-neon hover:shadow-xl transition-all duration-300 animate-slideUp"
+            style="animation-delay: 0.2s"
+          >
+            <div class="project-thumbnail mb-4">
+              <img
+                src="images/sqa/mobile-app.png"
+                alt="Mobile App Regression Testing"
+                class="w-full h-48 object-cover rounded-md"
+              />
+            </div>
+            <h3 class="text-2xl font-sci-fi neon-glow mb-4 text-center">
+              Mobile App Regression Testing
+            </h3>
+            <p class="text-center mb-4">
+              Performed regression testing on a mobile banking app to validate
+              updates and ensure stability across devices.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-6">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png"
+                alt="Selenium"
+                class="h-10 w-10 object-contain"
+              />
+              <img
+                src="images/logos/appium-logo.png"
+                alt="Appium"
+                class="h-10 w-10 object-contain"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Jira_Logo.svg/1280px-Jira_Logo.svg.png"
+                alt="Jira"
+                class="h-10 w-10 object-contain"
+              />
+            </div>
+            <button
+              onclick="toggleDetails('project2')"
+              class="block mx-auto px-6 py-2 bg-transparent border-2 border-neon-blue text-neon-blue font-bold rounded hover-animate"
+            >
+              View Details
+            </button>
+            <div id="project2" class="project-details hidden mt-6">
+              <h4 class="text-xl font-sci-fi neon-glow mb-2">
+                Role & Responsibilities
+              </h4>
+              <ul class="list-disc pl-6 mb-4">
+                <li>Executed cross-device testing on iOS and Android.</li>
+                <li>Automated mobile tests using Appium.</li>
+                <li>Identified and resolved performance issues.</li>
+              </ul>
+              <h4 class="text-xl font-sci-fi neon-glow mb-2">Achievements</h4>
+              <ul class="list-disc pl-6 mb-4">
+                <li>Decreased regression cycle time by 35%.</li>
+                <li>Achieved 95% test coverage.</li>
+              </ul>
+              <h4 class="text-xl font-sci-fi neon-glow mb-2">
+                Test Coverage Chart
+              </h4>
+              <canvas id="chart2" class="w-full h-64"></canvas>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div
+            class="project-card bg-dark-bg border border-neon-blue rounded-lg p-6 shadow-neon hover:shadow-xl transition-all duration-300 animate-slideUp"
+            style="animation-delay: 0.4s"
+          >
+            <div class="project-thumbnail mb-4">
+              <img
+                src="images/sqa/api-testing.png"
+                alt="API Testing for Payment Gateway"
+                class="w-full h-48 object-cover rounded-md"
+              />
+            </div>
+            <h3 class="text-2xl font-sci-fi neon-glow mb-4 text-center">
+              API Testing for Payment Gateway
+            </h3>
+            <p class="text-center mb-4">
+              Tested secure payment APIs to ensure reliability, security, and
+              compliance with industry standards.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-6">
+              <img
+                src="images/logos/postman.png"
+                alt="Postman"
+                class="h-10 w-10 object-contain"
+              />
+              <img
+                src="images/logos/jmeter-logo.PNG"
+                alt="JMeter"
+                class="h-10 w-10 object-contain"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Jira_Logo.svg/1280px-Jira_Logo.svg.png"
+                alt="Jira"
+                class="h-10 w-10 object-contain"
+              />
+            </div>
+            <button
+              onclick="toggleDetails('project3')"
+              class="block mx-auto px-6 py-2 bg-transparent border-2 border-neon-blue text-neon-blue font-bold rounded hover-animate"
+            >
+              View Details
+            </button>
+            <div id="project3" class="project-details hidden mt-6">
+              <h4 class="text-xl font-sci-fi neon-glow mb-2">
+                Role & Responsibilities
+              </h4>
+              <ul class="list-disc pl-6 mb-4">
+                <li>
+                  Validated API endpoints for functionality and performance.
+                </li>
+                <li>Conducted load testing with JMeter.</li>
+                <li>Ensured PCI-DSS compliance through security testing.</li>
+              </ul>
+              <h4 class="text-xl font-sci-fi neon-glow mb-2">Achievements</h4>
+              <ul class="list-disc pl-6 mb-4">
+                <li>Identified 20+ critical vulnerabilities.</li>
+                <li>Improved API response time by 50%.</li>
+              </ul>
+              <h4 class="text-xl font-sci-fi neon-glow mb-2">
+                Performance Metrics Chart
+              </h4>
+              <canvas id="chart3" class="w-full h-64"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- SQA Process Section -->
+        <div class="mt-16">
+          <h2
+            class="text-4xl font-sci-fi neon-glow mb-8 text-center animate-fadeIn"
+          >
+            My SQA Process
+          </h2>
+          <div class="flex flex-wrap justify-center gap-6">
+            <div
+              class="process-step bg-dark-bg border border-neon-blue rounded-lg p-4 text-center w-48 hover:shadow-xl transition-all duration-300"
+            >
+              <h4 class="text-lg font-sci-fi neon-glow">
+                Requirement Analysis
+              </h4>
+            </div>
+            <div
+              class="process-step bg-dark-bg border border-neon-blue rounded-lg p-4 text-center w-48 hover:shadow-xl transition-all duration-300"
+            >
+              <h4 class="text-lg font-sci-fi neon-glow">Test Planning</h4>
+            </div>
+            <div
+              class="process-step bg-dark-bg border border-neon-blue rounded-lg p-4 text-center w-48 hover:shadow-xl transition-all duration-300"
+            >
+              <h4 class="text-lg font-sci-fi neon-glow">Test Execution</h4>
+            </div>
+            <div
+              class="process-step bg-dark-bg border border-neon-blue rounded-lg p-4 text-center w-48 hover:shadow-xl transition-all duration-300"
+            >
+              <h4 class="text-lg font-sci-fi neon-glow">Bug Reporting</h4>
+            </div>
+            <div
+              class="process-step bg-dark-bg border border-neon-blue rounded-lg p-4 text-center w-48 hover:shadow-xl transition-all duration-300"
+            >
+              <h4 class="text-lg font-sci-fi neon-glow">Sign-Off</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-dark-bg border-t border-neon-blue py-16 mt-16 relative overflow-hidden"
+    >
+      <div
+        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left"
+      >
+        <!-- Left: Logo and info -->
+        <div class="flex flex-col items-center md:items-start space-y-4">
+          <a href="index.html">
+            <img
+              src="images/portfolio_logo.png"
+              alt="Saimon Logo"
+              class="h-14 w-auto neon-logo hover:scale-110 transition-transform duration-300"
+            />
+          </a>
+          <p class="text-sm text-dark-text max-w-xs leading-relaxed">
+            © 2025
+            <span class="text-neon-blue font-sci-fi">Saimon Haque Fahim</span>.
+            All Rights Reserved.
+          </p>
+        </div>
+
+        <!-- Middle: Socials + Contact Form -->
+        <div class="flex flex-col items-center space-y-6">
+          <div class="space-y-3">
+            <h3 class="text-lg font-sci-fi neon-glow">Let's Connect</h3>
+            <div class="flex space-x-5 justify-center">
+              <a href="https://facebook.com/" target="_blank">
+                <img
+                  src="images/icons/facebook-logo.png"
+                  alt="Facebook"
+                  class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
+                />
+              </a>
+              <a href="https://instagram.com/" target="_blank">
+                <img
+                  src="images/icons/instagram-logo.png"
+                  alt="Instagram"
+                  class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
+                />
+              </a>
+              <a href="https://linkedin.com/" target="_blank">
+                <img
+                  src="images/icons/linkedin-logo.png"
+                  alt="LinkedIn"
+                  class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
+                />
+              </a>
+              <a href="https://github.com/" target="_blank">
+                <img
+                  src="images/icons/github-logo.png"
+                  alt="GitHub"
+                  class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
+                />
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div
+            class="w-full max-w-sm bg-black/40 p-6 rounded-2xl shadow-[0_0_20px_#00ffff20]"
+          >
+            <h3
+              class="text-2xl font-sci-fi text-neon-blue text-center mb-5 tracking-wide"
+            >
+              Let's Inbox Me
+            </h3>
+            <form>
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="footer-input"
+                required
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                class="footer-input"
+                required
+              />
+              <textarea
+                placeholder="Your Message"
+                rows="3"
+                class="footer-input"
+                required
+              ></textarea>
+              <button type="submit" class="footer-btn">SUBMIT</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right: Quick Links -->
+        <div class="flex flex-col items-center md:items-end space-y-2">
+          <h3 class="text-lg font-sci-fi neon-glow mb-2">Quick Links</h3>
+          <a href="index.html" class="hover:text-neon-blue transition">Home</a>
+          <a href="about.html" class="hover:text-neon-blue transition">About</a>
+          <a href="frontend.html" class="hover:text-neon-blue transition"
+            >Frontend</a
+          >
+          <a href="qa.html" class="hover:text-neon-blue transition">QA</a>
+          <a href="contact.html" class="hover:text-neon-blue transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div
+        class="mt-10 text-center text-xs text-gray-400 border-t border-gray-700 pt-4"
+      >
+        Designed & Developed by
+        <span class="text-neon-blue">Saimon Haque Fahim</span>
+      </div>
+    </footer>
+
+    <!-- JavaScript for Toggle Details and Charts -->
+    <script src="script.js"></script>
+    <script>
+      function toggleDetails(id) {
+        const element = document.getElementById(id);
+        element.classList.toggle("hidden");
+      }
+
+      // Chart 1
+      new Chart(document.getElementById("chart1"), {
+        type: "line",
+        data: {
+          labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
+          datasets: [
+            {
+              label: "Bugs Found",
+              data: [20, 15, 10, 5],
+              borderColor: "#4CAF50",
+              backgroundColor: "rgba(76, 175, 80, 0.2)",
+              fill: true,
+            },
+            {
+              label: "Bugs Resolved",
+              data: [15, 12, 8, 5],
+              borderColor: "#2196F3",
+              backgroundColor: "rgba(33, 150, 243, 0.2)",
+              fill: true,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: "top" },
+            title: { display: true, text: "Bug Tracking Over Time" },
+          },
+        },
+      });
+
+      // Chart 2 (Pie for Test Coverage)
+      new Chart(document.getElementById("chart2"), {
+        type: "pie",
+        data: {
+          labels: ["Covered", "Uncovered"],
+          datasets: [
+            { data: [95, 5], backgroundColor: ["#4CAF50", "#F44336"] },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: { title: { display: true, text: "Test Coverage" } },
+        },
+      });
+
+      // Chart 3 (Bar for Performance)
+      new Chart(document.getElementById("chart3"), {
+        type: "bar",
+        data: {
+          labels: ["Before", "After"],
+          datasets: [
+            {
+              label: "Response Time (ms)",
+              data: [500, 250],
+              backgroundColor: ["#FF9800", "#4CAF50"],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: { display: true, text: "API Response Time Improvement" },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
