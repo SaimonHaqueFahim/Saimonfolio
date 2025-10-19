@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Saimon Haque Fahim</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "neon-blue": "#00ffff",
+              "dark-bg": "#0a0a0a",
+              "dark-text": "#e0e0e0",
+            },
+            fontFamily: {
+              "sci-fi": ["Orbitron", "sans-serif"],
+              body: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/contact.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/about.css" />
+    <link
+      rel="shortcut icon"
+      href="images/icons/tab-logo.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body class="bg-dark-bg text-dark-text font-body">
+    <!-- Navbar (Same as Homepage) -->
+    <nav class="fixed top-0 left-0 w-full bg-dark-bg shadow-md z-50">
+      <div
+        class="container mx-auto px-4 py-6 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center pl-4">
+          <img
+            src="images/portfolio_logo.png"
+            alt="logo"
+            class="portfolio-logo"
+          />
+        </a>
+        <div class="flex space-x-6">
+          <a href="index.html" class="hover-animate neon-glow">Home</a>
+          <a href="about.html" class="hover-animate neon-glow">About</a>
+          <div class="relative group">
+            <a href="#" class="hover-animate neon-glow">Projects</a>
+            <div
+              class="slide-menu hidden group-hover:block absolute top-full w-32 bg-dark-bg border border-neon-blue rounded-lg shadow-lg"
+            >
+              <a
+                href="frontend.html"
+                class="block px-4 py-2 text-neon-blue hover:bg-neon-blue hover:text-dark-bg transition-colors duration-200"
+                >Frontend</a
+              >
+              <a
+                href="sqa.html"
+                class="block px-4 py-2 text-neon-blue hover:bg-neon-blue hover:text-dark-bg transition-colors duration-200"
+                >QA</a
+              >
+            </div>
+          </div>
+          <a href="index.html#skills" class="hover-animate neon-glow">Skills</a>
+          <a href="index.html#achievements" class="hover-animate neon-glow"
+            >Achievements</a
+          >
+          <a
+            href="contact.html"
+            class="hover-animate neon-glow text-neon-blue font-bold"
+            >Contact</a
+          >
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=mshfahim12@gmail.com&su=Job Opportunity&body=Hello Saimon, I am interested in hiring you."
+            target="_blank"
+            class="hover-animate neon-glow"
+            >Hire Me</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section id="contact" class="pt-40 pb-20 px-6">
+      <div class="container mx-auto">
+        <h2 class="text-5xl font-sci-fi neon-glow text-center mb-16">
+          Get In Touch
+        </h2>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-10 bg-black/40 p-8 rounded-3xl border border-neon-blue shadow-[0_0_20px_#00ffff20]"
+        >
+          <!-- Google Map -->
+          <div
+            class="rounded-xl overflow-hidden shadow-[0_0_25px_#00ffff40] h-[400px] md:h-[500px]"
+          >
+            <iframe
+              class="w-full h-full"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.555788033978!2d90.42394307450413!3d23.834258378633773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7929eaa3c2b%3A0x79c92a23b8fbe79!2sNorth%20Shahjahanpur%2C%20Dhaka%201217!5e0!3m2!1sen!2sbd!4v1697047587980!5m2!1sen!2sbd"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <!-- Contact Info + Form -->
+          <div class="flex flex-col justify-between space-y-8">
+            <!-- Contact Info -->
+            <div class="space-y-4">
+              <h3 class="text-3xl font-sci-fi text-neon-blue mb-4">
+                Contact Details
+              </h3>
+              <p>
+                <span class="font-bold text-neon-blue">📍 Address:</span> North
+                Shahjahanpur, Dhaka - 1217
+              </p>
+              <p>
+                <span class="font-bold text-neon-blue">📞 Phone:</span>
+                01936444940
+              </p>
+              <p>
+                <span class="font-bold text-neon-blue">📧 Email:</span>
+                mshfahim12@gmail.com
+              </p>
+            </div>
+
+            <!-- Contact Form -->
+            <form
+              action="https://formspree.io/f/xqazrbnp"
+              method="POST"
+              class="bg-dark-bg p-6 rounded-2xl border border-neon-blue shadow-[0_0_20px_#00ffff30]"
+            >
+              <h4 class="text-2xl font-sci-fi text-neon-blue mb-4 text-center">
+                Send a Message
+              </h4>
+
+              <div class="flex flex-col space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  class="contact-input"
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  class="contact-input"
+                  required
+                />
+                <textarea
+                  name="message"
+                  rows="4"
+                  placeholder="Your Message"
+                  class="contact-input"
+                  required
+                ></textarea>
+                <button type="submit" class="contact-btn">SEND MESSAGE</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (Same as Homepage) -->
+    <footer
+      class="bg-dark-bg border-t border-neon-blue py-16 mt-16 relative overflow-hidden"
+    >
+      <div
+        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left"
+      >
+        <div class="flex flex-col items-center md:items-start space-y-4">
+          <a href="index.html">
+            <img
+              src="images/portfolio_logo.png"
+              alt="Saimon Logo"
+              class="h-14 w-auto neon-logo hover:scale-110 transition-transform duration-300"
+            />
+          </a>
+          <p class="text-sm text-dark-text max-w-xs leading-relaxed">
+            © 2025
+            <span class="text-neon-blue font-sci-fi">Saimon Haque Fahim</span>.
+            All Rights Reserved.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center space-y-6">
+          <div class="space-y-3">
+            <h3 class="text-lg font-sci-fi neon-glow">Let's Connect</h3>
+            <div class="flex space-x-5 justify-center">
+              <a
+                href="https://www.facebook.com/profile.php?id=61577829180434"
+                target="_blank"
+                ><img
+                  src="images/icons/facebook-logo.png"
+                  alt="Facebook"
+                  class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
+              /></a>
+              <a
+                href="https://www.instagram.com/ultimate_saimoon_knight/"
+                target="_blank"
+                ><img
+                  src="images/icons/instagram-logo.png"
+                  alt="Instagram"
+                  class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
+              /></a>
+              <a
+                href="https://www.linkedin.com/in/saimon-haque-fahim-157ab3273/"
+                target="_blank"
+                ><img
+                  src="images/icons/linkedin-logo.png"
+                  alt="LinkedIn"
+                  class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
+              /></a>
+              <a href="https://github.com/SaimonHaqueFahim" target="_blank"
+                ><img
+                  src="images/icons/github-logo.png"
+                  alt="GitHub"
+                  class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
+              /></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center md:items-end space-y-2">
+          <h3 class="text-lg font-sci-fi neon-glow mb-2">Quick Links</h3>
+          <a href="index.html" class="hover:text-neon-blue transition">Home</a>
+          <a href="about.html" class="hover:text-neon-blue transition">About</a>
+          <a href="frontend.html" class="hover:text-neon-blue transition"
+            >Frontend</a
+          >
+          <a href="sqa.html" class="hover:text-neon-blue transition">QA</a>
+          <a href="contact.html" class="hover:text-neon-blue transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="mt-10 text-center text-xs text-gray-400 border-t border-gray-700 pt-4"
+      >
+        Designed & Developed by
+        <span class="text-neon-blue">Saimon Haque Fahim</span>
+      </div>
+    </footer>
+  </body>
+</html>
