@@ -30,6 +30,12 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/frontend.css" />
@@ -65,14 +71,16 @@
           <a href="index.html" class="hover-animate neon-glow">Home</a>
           <a href="about.html" class="hover-animate neon-glow">About</a>
           <div class="relative group">
-            <a href="#" class="hover-animate neon-glow text-neon-blue font-bold">Projects</a>
+            <a href="#" class="hover-animate neon-glow text-neon-blue font-bold"
+              >Projects</a
+            >
             <div
               class="slide-menu hidden group-hover:block absolute top-full w-32 bg-dark-bg border border-neon-blue rounded-lg shadow-lg"
             >
               <a
                 href="frontend.html"
                 class="block px-4 py-2 text-neon-blue hover:bg-neon-blue hover:text-dark-bg transition-colors duration-200"
-                >Frontend</a
+                >Web</a
               >
               <a
                 href="sqa.html"
@@ -82,9 +90,7 @@
             </div>
           </div>
           <a href="index.html" class="hover-animate neon-glow">Skills</a>
-          <a href="index.html" class="hover-animate neon-glow"
-            >Achievements</a
-          >
+          <a href="index.html" class="hover-animate neon-glow">Achievements</a>
           <a href="contact.html" class="hover-animate neon-glow">Contact</a>
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=mshfahim12@gmail.com&su=Job Opportunity&body=Hello Saimon, I am interested in hiring you."
@@ -95,273 +101,380 @@
         </div>
       </div>
     </nav>
-    <!-- Hero Section -->
-    <header class="frontend-hero">
-      <div class="web-title">
-      <h2 class="text-5xl font-sci-fi neon-glow mb-16 text-center animate-fadeIn">Web Projects</h2>
+
+    <!-- Sidebar -->
+    <div
+      id="sidebar"
+      class="fixed left-0 top-[110px] bottom-0 bg-dark-bg border-r border-neon-blue/20 overflow-y-auto z-40 transition-all duration-300 w-[240px]"
+    >
+      <div
+        class="sidebar-header flex items-center px-6 py-4 border-b border-neon-blue/10"
+      >
+        <button
+          id="hamburger"
+          class="text-dark-text hover:text-neon-blue focus:outline-none text-2xl mr-3"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <span class="sidebar-text text-neon-blue font-sci-fi text-lg"
+          >Categories</span
+        >
       </div>
 
-      <!-- 🔎 Search Bar -->
-      <div class="search-container">
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Search projects..."
-          autocomplete="off"
-        />
-        <div id="suggestions" class="suggestions"></div>
-      </div>
-    </header>
-
-    <!-- Projects Section -->
-    <section class="projects-section">
-      <div class="projects-grid" id="projectsGrid">
-        <a
-          href="https://b2b.aerotrip.net/"
-          target="_blank"
-          class="project-card"
-          data-title="AeroTrip"
+      <ul class="sidebar-menu">
+        <!-- Home -->
+        <li
+          class="sidebar-item home-item flex items-center px-6 py-4 cursor-pointer hover:bg-neon-blue/10 transition-colors duration-200"
         >
-          <div class="project-image">
-            <img src="images/frontend/aerotripweb.png" alt="AeroTrip" />
-          </div>
-          <div class="project-info">
-            <h3>AeroTrip</h3>
-            <p>
-              A modern International flight ticket selling B2B & B2C website.
-            </p>
-          </div>
-        </a>
+          <i class="fas fa-home sidebar-icon"></i>
 
-        <a
-          href="https://saimonhaquefahim.github.io/Nova-Tech/"
-          target="_blank"
-          class="project-card"
-          data-title="Nova Tech"
-        >
-          <div class="project-image">
-            <img src="images/frontend/novatechss.PNG" alt="PH Tube" />
-          </div>
-          <div class="project-info">
-            <h3>Nova Tech</h3>
-            <p>
-              A reliable Ecommerce website for PC, laptops, & other consumer
-              electronics.
-            </p>
-          </div>
-        </a>
+          <span class="sidebar-text">Home</span>
+        </li>
 
-        <a
-          href="https://fnzgamingshop.com/"
-          target="_blank"
-          class="project-card"
-          data-title="FNZ Gaming Shop"
+        <!-- All Projects (default active) -->
+        <li
+          id="category-all"
+          class="sidebar-item category-item flex items-center px-6 py-4 cursor-pointer hover:bg-neon-blue/10 transition-colors duration-200 active"
+          data-category="all"
         >
-          <div class="project-image">
-            <img src="images/frontend/fnz.PNG" alt="FNZ Gaming Shop" />
-          </div>
-          <div class="project-info">
-            <h3>FNZ Gaming Shop</h3>
-            <p>
-              FNZ Gaming Shop offers the latest video games, Currency, and OTT
-              subscription at great prices.
-            </p>
-          </div>
-        </a>
+          <i class="fas fa-th-large sidebar-icon"></i>
 
-        <a
-          href="https://kwalitybd.com/"
-          target="_blank"
-          class="project-card"
-          data-title="Kwality Ice Cream"
-        >
-          <div class="project-image">
-            <img src="images/frontend/kwality.PNG" alt="Kwality Ice Cream" />
-          </div>
-          <div class="project-info">
-            <h3>Kwality Ice Cream</h3>
-            <p>
-              Official Website of Kwality Ice Cream under the Sanowara group of company - one of the Pioneer Business Group in Bangladesh.
-            </p>
-          </div>
-        </a>
+          <span class="sidebar-text">All Projects</span>
+        </li>
 
-        <a
-          href="https://thedentalshopbd.com/"
-          target="_blank"
-          class="project-card"
-          data-title="The Dental Shop"
+        <!-- Project Management -->
+        <li
+          id="category-project-management"
+          class="sidebar-item category-item flex items-center px-6 py-4 cursor-pointer hover:bg-neon-blue/10 transition-colors duration-200"
+          data-category="project-management"
         >
-          <div class="project-image">
-            <img src="images/frontend/dentalshop.PNG" alt="The Dental Shop" />
-          </div>
-          <div class="project-info">
-            <h3>The Dental Shop</h3>
-            <p>
-              A Responsive live website of a Dental Shop collaborating with the - Medlife Health Care Limited.
-            </p>
-          </div>
-        </a>
+          <i class="fas fa-tasks sidebar-icon"></i>
 
-        <a
-          href="https://medlifebd.com/"
-          target="_blank"
-          class="project-card"
-          data-title="Medlife Healthcare Ltd."
-        >
-          <div class="project-image">
-            <img src="images/frontend/medlife.PNG" alt="Medlife Healthcare Ltd." />
-          </div>
-          <div class="project-info">
-            <h3>Medlife Healthcare Ltd.</h3>
-            <p>
-              The Official live website of - Medlife Health Care Limited.
-            </p>
-          </div>
-        </a>
+          <span class="sidebar-text">Project Management</span>
+        </li>
 
-        <a
-          href="https://saimonhaquefahim.github.io/Saimonfolio/"
-          target="_blank"
-          class="project-card"
-          data-title="My Portfolio"
+        <!-- Frontend Development -->
+        <li
+          id="category-frontend-development"
+          class="sidebar-item category-item flex items-center px-6 py-4 cursor-pointer hover:bg-neon-blue/10 transition-colors duration-200"
+          data-category="frontend-development"
         >
-          <div class="project-image">
-            <img src="images/frontend/portfolio-thumbnail.PNG" alt="My Portfolio" />
-          </div>
-          <div class="project-info">
-            <h3>My Portfolio</h3>
-            <p>Saimon's Showcase.</p>
-          </div>
-        </a>
+          <i class="fas fa-code sidebar-icon"></i>
 
-        <a
-          href="https://saimonhaquefahim.github.io/PH-Tube/"
-          target="_blank"
-          class="project-card"
-          data-title="PH Tube"
-        >
-          <div class="project-image">
-            <img src="images/frontend/phtube.PNG" alt="PH Tube" />
-          </div>
-          <div class="project-info">
-            <h3>PH Tube</h3>
-            <p>Modern UI based video platform.</p>
-          </div>
-        </a>
+          <span class="sidebar-text">Frontend</span>
+        </li>
 
-        <a
-          href="https://saimonhaquefahim.github.io/Biker-Zone/#slide2"
-          target="_blank"
-          class="project-card"
-          data-title="Biker Zone"
+        <!-- Personal -->
+        <li
+          id="category-personal"
+          class="sidebar-item category-item flex items-center px-6 py-4 cursor-pointer hover:bg-neon-blue/10 transition-colors duration-200"
+          data-category="personal"
         >
-          <div class="project-image">
-            <img src="images/frontend/bikerzone.PNG" alt="Biker Zone" />
-          </div>
-          <div class="project-info">
-            <h3>Biker Zone</h3>
-            <p>
-              A breed of motorcycle community. Providing the best experience of
-              today's online shopping mall enhanced with useful features.
-            </p>
-          </div>
-        </a>
+          <i class="fas fa-user sidebar-icon"></i>
 
-        <a
-          href="https://saimonhaquefahim.github.io/penguin-fashion-using-tailwind/"
-          target="_blank"
-          class="project-card"
-          data-title="Penguin Fashion"
-        >
-          <div class="project-image">
-            <img
-              src="images/frontend/penguin_fashion.PNG"
-              alt="Penguin Fashion"
-            />
-          </div>
-          <div class="project-info">
-            <h3>Penguin Fashion</h3>
-            <p>An ideal Fashion Ecommerce Site</p>
-          </div>
-        </a>
+          <span class="sidebar-text">Personal</span>
+        </li>
+      </ul>
+    </div>
 
-        <a
-          href="https://saimonhaquefahim.github.io/tea-house-tailwind/"
-          target="_blank"
-          class="project-card"
-          data-title="Tea House"
-        >
-          <div class="project-image">
-            <img src="images/frontend/teahouse.PNG" alt="Tea House" />
-          </div>
-          <div class="project-info">
-            <h3>Tea House</h3>
-            <p>Responsive UI based Soft and Cold drink's website.</p>
-          </div>
-        </a>
+    <!-- Main Content -->
+    <main id="main-content" class="transition-margin duration-300 ml-[240px]">
+      <!-- Hero Section -->
+      <header class="frontend-hero">
+        <div class="web-title">
+          <h2
+            class="text-5xl font-sci-fi neon-glow mb-16 text-center animate-fadeIn"
+          >
+            Web Projects
+          </h2>
+        </div>
 
-        <a
-          href="https://saimonhaquefahim.github.io/g3-architect-website/"
-          target="_blank"
-          class="project-card"
-          data-title="G3 Architects"
-        >
-          <div class="project-image">
-            <img src="images/frontend/architecture.PNG" alt="G3 Architects" />
-          </div>
-          <div class="project-info">
-            <h3>G3 Architects</h3>
-            <p>An attractive UI based Architect's management system.</p>
-          </div>
-        </a>
+        <!-- 🔎 Search Bar -->
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search projects..."
+            autocomplete="off"
+          />
+          <div id="suggestions" class="suggestions"></div>
+        </div>
+      </header>
 
-        <a
-          href="https://saimonhaquefahim.github.io/Mobile-Bank/"
-          target="_blank"
-          class="project-card"
-          data-title="Mobile Bank"
-        >
-          <div class="project-image">
-            <img src="images/frontend/payoo.PNG" alt="Mobile Bank" />
-          </div>
-          <div class="project-info">
-            <h3>Mobile Bank</h3>
-            <p>Mobile Banking System with Responsive UI.</p>
-          </div>
-        </a>
+      <!-- Projects Section -->
+      <section class="projects-section">
+        <div class="projects-grid" id="projectsGrid">
+          <a
+            href="https://b2b.aerotrip.net/"
+            target="_blank"
+            class="project-card"
+            data-title="AeroTrip"
+            data-category="frontend-development"
+          >
+            <div class="project-image">
+              <img src="images/frontend/aerotripweb.png" alt="AeroTrip" />
+            </div>
+            <div class="project-info">
+              <h3>AeroTrip</h3>
+              <p>
+                A modern International flight ticket selling B2B & B2C website.
+              </p>
+            </div>
+          </a>
 
-        <a
-          href="https://saimonhaquefahim.github.io/English-Janala/"
-          target="_blank"
-          class="project-card"
-          data-title="English Janala"
-        >
-          <div class="project-image">
-            <img src="images/frontend/englishjanala.PNG" alt="English Janala" />
-          </div>
-          <div class="project-info">
-            <h3>English Janala</h3>
-            <p>A comprehensive online learning platform.</p>
-          </div>
-        </a>
+          <a
+            href="https://saimonhaquefahim.github.io/Nova-Tech/"
+            target="_blank"
+            class="project-card"
+            data-title="Nova Tech"
+            data-category="personal"
+          >
+            <div class="project-image">
+              <img src="images/frontend/novatechss.PNG" alt="PH Tube" />
+            </div>
+            <div class="project-info">
+              <h3>Nova Tech</h3>
+              <p>
+                A reliable Ecommerce website for PC, laptops, & other consumer
+                electronics.
+              </p>
+            </div>
+          </a>
 
-        <a
-          href="https://saimonhaquefahim.github.io/My-YouTube-Clone/"
-          target="_blank"
-          class="project-card"
-          data-title="YouTube Clone"
-        >
-          <div class="project-image">
-            <img src="images/frontend/ytcloness.PNG" alt="YouTube Clone" />
-          </div>
-          <div class="project-info">
-            <h3>YouTube Clone</h3>
-            <p>Just a clone of YouTube's webpage.</p>
-          </div>
-        </a>
-      </div>
-    </section>
+          <a
+            href="https://fnzgamingshop.com/"
+            target="_blank"
+            class="project-card"
+            data-title="FNZ Gaming Shop"
+            data-category="project-management"
+          >
+            <div class="project-image">
+              <img src="images/frontend/fnz.PNG" alt="FNZ Gaming Shop" />
+            </div>
+            <div class="project-info">
+              <h3>FNZ Gaming Shop</h3>
+              <p>
+                FNZ Gaming Shop offers the latest video games, Currency, and OTT
+                subscription at great prices.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://kwalitybd.com/"
+            target="_blank"
+            class="project-card"
+            data-title="Kwality Ice Cream"
+            data-category="project-management"
+          >
+            <div class="project-image">
+              <img src="images/frontend/kwality.PNG" alt="Kwality Ice Cream" />
+            </div>
+            <div class="project-info">
+              <h3>Kwality Ice Cream</h3>
+              <p>
+                Official Website of Kwality Ice Cream under the Sanowara group
+                of company - one of the Pioneer Business Group in Bangladesh.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://thedentalshopbd.com/"
+            target="_blank"
+            class="project-card"
+            data-title="The Dental Shop"
+            data-category="project-management"
+          >
+            <div class="project-image">
+              <img src="images/frontend/dentalshop.PNG" alt="The Dental Shop" />
+            </div>
+            <div class="project-info">
+              <h3>The Dental Shop</h3>
+              <p>
+                A Responsive live website of a Dental Shop collaborating with
+                the - Medlife Health Care Limited.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://medlifebd.com/"
+            target="_blank"
+            class="project-card"
+            data-title="Medlife Healthcare Ltd."
+            data-category="project-management"
+          >
+            <div class="project-image">
+              <img
+                src="images/frontend/medlife.PNG"
+                alt="Medlife Healthcare Ltd."
+              />
+            </div>
+            <div class="project-info">
+              <h3>Medlife Healthcare Ltd.</h3>
+              <p>The Official live website of - Medlife Health Care Limited.</p>
+            </div>
+          </a>
+
+          <a
+            href="https://saimonhaquefahim.github.io/Saimonfolio/"
+            target="_blank"
+            class="project-card"
+            data-title="My Portfolio"
+            data-category="personal"
+          >
+            <div class="project-image">
+              <img
+                src="images/frontend/portfolio-thumbnail.PNG"
+                alt="My Portfolio"
+              />
+            </div>
+            <div class="project-info">
+              <h3>My Portfolio</h3>
+              <p>Saimon's Showcase.</p>
+            </div>
+          </a>
+
+          <a
+            href="https://saimonhaquefahim.github.io/PH-Tube/"
+            target="_blank"
+            class="project-card"
+            data-title="PH Tube"
+            data-category="personal"
+          >
+            <div class="project-image">
+              <img src="images/frontend/phtube.PNG" alt="PH Tube" />
+            </div>
+            <div class="project-info">
+              <h3>PH Tube</h3>
+              <p>Modern UI based video platform.</p>
+            </div>
+          </a>
+
+          <a
+            href="https://saimonhaquefahim.github.io/Biker-Zone/#slide2"
+            target="_blank"
+            class="project-card"
+            data-title="Biker Zone"
+            data-category="personal"
+          >
+            <div class="project-image">
+              <img src="images/frontend/bikerzone.PNG" alt="Biker Zone" />
+            </div>
+            <div class="project-info">
+              <h3>Biker Zone</h3>
+              <p>
+                A breed of motorcycle community. Providing the best experience
+                of today's online shopping mall enhanced with useful features.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://saimonhaquefahim.github.io/penguin-fashion-using-tailwind/"
+            target="_blank"
+            class="project-card"
+            data-title="Penguin Fashion"
+            data-category="personal"
+          >
+            <div class="project-image">
+              <img
+                src="images/frontend/penguin_fashion.PNG"
+                alt="Penguin Fashion"
+              />
+            </div>
+            <div class="project-info">
+              <h3>Penguin Fashion</h3>
+              <p>An ideal Fashion Ecommerce Site</p>
+            </div>
+          </a>
+
+          <a
+            href="https://saimonhaquefahim.github.io/tea-house-tailwind/"
+            target="_blank"
+            class="project-card"
+            data-title="Tea House"
+            data-category="personal"
+          >
+            <div class="project-image">
+              <img src="images/frontend/teahouse.PNG" alt="Tea House" />
+            </div>
+            <div class="project-info">
+              <h3>Tea House</h3>
+              <p>Responsive UI based Soft and Cold drink's website.</p>
+            </div>
+          </a>
+
+          <a
+            href="https://saimonhaquefahim.github.io/g3-architect-website/"
+            target="_blank"
+            class="project-card"
+            data-title="G3 Architects"
+            data-category="personal"
+          >
+            <div class="project-image">
+              <img src="images/frontend/architecture.PNG" alt="G3 Architects" />
+            </div>
+            <div class="project-info">
+              <h3>G3 Architects</h3>
+              <p>An attractive UI based Architect's management system.</p>
+            </div>
+          </a>
+
+          <a
+            href="https://saimonhaquefahim.github.io/Mobile-Bank/"
+            target="_blank"
+            class="project-card"
+            data-title="Mobile Bank"
+            data-category="personal"
+          >
+            <div class="project-image">
+              <img src="images/frontend/payoo.PNG" alt="Mobile Bank" />
+            </div>
+            <div class="project-info">
+              <h3>Mobile Bank</h3>
+              <p>Mobile Banking System with Responsive UI.</p>
+            </div>
+          </a>
+
+          <a
+            href="https://saimonhaquefahim.github.io/English-Janala/"
+            target="_blank"
+            class="project-card"
+            data-title="English Janala"
+            data-category="personal"
+          >
+            <div class="project-image">
+              <img
+                src="images/frontend/englishjanala.PNG"
+                alt="English Janala"
+              />
+            </div>
+            <div class="project-info">
+              <h3>English Janala</h3>
+              <p>A comprehensive online learning platform.</p>
+            </div>
+          </a>
+
+          <a
+            href="https://saimonhaquefahim.github.io/My-YouTube-Clone/"
+            target="_blank"
+            class="project-card"
+            data-title="YouTube Clone"
+            data-category="personal"
+          >
+            <div class="project-image">
+              <img src="images/frontend/ytcloness.PNG" alt="YouTube Clone" />
+            </div>
+            <div class="project-info">
+              <h3>YouTube Clone</h3>
+              <p>Just a clone of YouTube's webpage.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <footer
@@ -391,21 +504,30 @@
           <div class="space-y-3">
             <h3 class="text-lg font-sci-fi neon-glow">Let's Connect</h3>
             <div class="flex space-x-5 justify-center">
-              <a href="https://www.facebook.com/profile.php?id=61577829180434" target="_blank">
+              <a
+                href="https://www.facebook.com/profile.php?id=61577829180434"
+                target="_blank"
+              >
                 <img
                   src="images/icons/facebook-logo.png"
                   alt="Facebook"
                   class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
                 />
               </a>
-              <a href="https://www.instagram.com/ultimate_saimoon_knight/" target="_blank">
+              <a
+                href="https://www.instagram.com/ultimate_saimoon_knight/"
+                target="_blank"
+              >
                 <img
                   src="images/icons/instagram-logo.png"
                   alt="Instagram"
                   class="h-7 w-7 hover:scale-110 transition-transform filter hover:drop-shadow-[0_0_8px_#00ffff]"
                 />
               </a>
-              <a href="https://www.linkedin.com/in/saimon-haque-fahim-157ab3273/" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/saimon-haque-fahim-157ab3273/"
+                target="_blank"
+              >
                 <img
                   src="images/icons/linkedin-logo.png"
                   alt="LinkedIn"
@@ -481,17 +603,54 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
-  </body>
-</html>
-
-    <!-- 🔥 Search Script -->
+    <!-- Inline Script for Search and Sidebar -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const searchInput = document.getElementById("searchInput");
-        const suggestionsBox = document.getElementById("suggestions");
-        const projectsGrid = document.getElementById("projectsGrid");
-        const projectCards = document.querySelectorAll(".project-card");
+        // Sidebar Toggle
+        const sidebar = document.getElementById("sidebar");
+        const mainContent = document.getElementById("main-content");
+        const hamburger = document.getElementById("hamburger");
+        const homeItem = document.querySelector(".home-item");
 
+        hamburger.addEventListener("click", () => {
+          sidebar.classList.toggle("collapsed");
+          mainContent.classList.toggle("sidebar-collapsed");
+        });
+
+        // Home link
+        homeItem.addEventListener("click", () => {
+          window.location.href = "index.html";
+        });
+
+        // Category Filtering
+        const categoryItems = document.querySelectorAll(".category-item");
+        const projectCards = document.querySelectorAll(".project-card");
+        const searchInput = document.getElementById("searchInput");
+        const suggestions = document.getElementById("suggestions");
+
+        categoryItems.forEach((item) => {
+          item.addEventListener("click", () => {
+            categoryItems.forEach((i) => i.classList.remove("active"));
+            item.classList.add("active");
+            const category = item.dataset.category;
+            filterProjects(category);
+            // Clear search to avoid conflicts
+            searchInput.value = "";
+            suggestions.style.display = "none";
+          });
+        });
+
+        function filterProjects(category) {
+          projectCards.forEach((card) => {
+            if (category === "all" || card.dataset.category === category) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        }
+
+        // Existing Search Functionality
         const projects = Array.from(projectCards).map((card) => ({
           title: card.dataset.title,
           element: card,
@@ -500,10 +659,10 @@
         // Show suggestions while typing
         searchInput.addEventListener("input", () => {
           const query = searchInput.value.toLowerCase();
-          suggestionsBox.innerHTML = "";
+          suggestions.innerHTML = "";
 
           if (!query) {
-            suggestionsBox.style.display = "none";
+            suggestions.style.display = "none";
             showAllProjects();
             return;
           }
@@ -518,14 +677,14 @@
               div.textContent = p.title;
               div.addEventListener("click", () => {
                 searchInput.value = p.title;
-                suggestionsBox.style.display = "none";
+                suggestions.style.display = "none";
                 showOnlyProject(p.title);
               });
-              suggestionsBox.appendChild(div);
+              suggestions.appendChild(div);
             });
-            suggestionsBox.style.display = "block";
+            suggestions.style.display = "block";
           } else {
-            suggestionsBox.style.display = "none";
+            suggestions.style.display = "none";
           }
         });
 

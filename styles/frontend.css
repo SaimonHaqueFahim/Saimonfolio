@@ -167,3 +167,78 @@ body {
   text-align: center;
   background: linear-gradient(180deg, #111 0%, #0a0a0a 100%);
 }
+
+/* ────────────────────────────────
+   Sidebar – YouTube-style collapsible
+   ──────────────────────────────── */
+.sidebar-icon {
+  color: #00ffff !important; /* neon blue */
+  font-size: 18px;
+  margin-right: 12px;
+}
+
+
+
+#sidebar {
+  width: 240px;
+  transition: width 0.3s ease;
+}
+#sidebar.collapsed {
+  width: 72px;               /* icon-only width */
+}
+
+/* Hide text when collapsed */
+#sidebar.collapsed .sidebar-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Header – keep hamburger centered */
+.sidebar-header {
+  transition: padding 0.3s ease;
+}
+#sidebar.collapsed .sidebar-header {
+  justify-content: center;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Menu items – center icons */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  transition: padding 0.3s ease, background-color 0.2s ease;
+}
+#sidebar.collapsed .sidebar-item {
+  justify-content: center;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Icon hover & active */
+.sidebar-item i { transition: color 0.2s ease; }
+.sidebar-item:hover i,
+.sidebar-item.active i { color: #00ffff; }
+
+.sidebar-item.active {
+  background: rgba(0, 255, 224, 0.2);
+  color: #00ffff;
+}
+
+/* Main content margin */
+#main-content {
+  margin-left: 240px;
+  transition: margin-left 0.3s ease;
+}
+#main-content.sidebar-collapsed { margin-left: 72px; }
+
+/* Mobile – start collapsed */
+@media (max-width: 768px) {
+  #sidebar { width: 72px; }
+  #main-content { margin-left: 72px; }
+  #sidebar .sidebar-text { opacity: 0; width: 0; overflow: hidden; white-space: nowrap; }
+  .sidebar-header { justify-content: center; padding-left:0; padding-right:0; }
+  .sidebar-item { justify-content: center; padding-left:0; padding-right:0; }
+}
