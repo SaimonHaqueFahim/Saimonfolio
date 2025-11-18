@@ -253,59 +253,75 @@ nav .flex {
     margin-left: -2rem; /* Shift links to the left while preserving spacing */
 }
 
-/* Skills Section Styling */
-#skills {
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%); /* Subtle gradient for depth */
+/* Continuous glowing background animation for skill logos */
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 5px #00ffff; }
+  50% { box-shadow: 0 0 20px #00ffff; }
+  100% { box-shadow: 0 0 5px #00ffff; }
 }
 
-.skill-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.7); /* Enhanced neon glow on hover */
-}
-
-.skill-logo {
+.skill-logo.animate-glow {
+  border-radius: 12px;
+  padding: 10px;
+  background: rgba(0,255,255,0.05);
+  animation: glowPulse 2s infinite;
   transition: all 0.3s ease;
-  filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.3)); /* Subtle initial glow */
 }
 
-.skill-logo:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.8)); /* Brighter glow and scale on hover */
+.skill-logo.animate-glow:hover {
+  transform: scale(1.25);
+  animation: glowPulse 1s infinite alternate;
+  box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff60, 0 0 75px #00ffff30;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Alternate neon color for Backend and Management logos */
+.skill-card:nth-child(2) .skill-logo.animate-glow,
+.skill-card:nth-child(4) .skill-logo.animate-glow {
+  background: rgba(0,255,255,0.05);
+  animation: glowPulseGreen 2s infinite;
 }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes glowPulseGreen {
+  0% { box-shadow: 0 0 5px #00ffff; }
+  50% { box-shadow: 0 0 20px #00ffff; }
+  100% { box-shadow: 0 0 5px #00ffff; }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 1s ease-out forwards;
+.skill-card:nth-child(2) .skill-logo.animate-glow:hover,
+.skill-card:nth-child(4) .skill-logo.animate-glow:hover {
+  box-shadow: 0 0 25px #00ffff, 0 0 50px #00ffff60, 0 0 75px #00ffff30;
 }
 
-.animate-slideUp {
+/* Skill Card Animation Delay */
+.skill-card {
   animation: slideUp 1s ease-out forwards;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .grid-cols-3 {
-    grid-template-columns: 1fr; /* Stack cards vertically on mobile */
-  }
+.skill-card:nth-child(1) { animation-delay: 0s; }
+.skill-card:nth-child(2) { animation-delay: 0.1s; }
+.skill-card:nth-child(3) { animation-delay: 0.2s; }
+.skill-card:nth-child(4) { animation-delay: 0.3s; }
+.skill-card:nth-child(5) { animation-delay: 0.4s; }
 
-  .skill-logo {
-    h-12 w-12; /* Smaller logos on mobile */
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .grid-cols-5 {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@media (max-width: 768px) {
+  .grid-cols-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid-cols-5 {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* Achievements Section */
 #achievements {
