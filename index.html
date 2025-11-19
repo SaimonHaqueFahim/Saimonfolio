@@ -235,6 +235,103 @@
 </section>
 
 
+<!-- My Expertise Section -->
+<section id="expertise" class="py-20 px-6 sm:px-12 lg:px-24">
+  <h2 class="text-4xl font-sci-fi neon-glow mb-12 text-center animate-fadeIn">
+    My Expertise
+  </h2>
+
+  <div class="space-y-4 max-w-4xl mx-auto">
+
+    <!-- Dropdown Item -->
+    <div class="bg-[#0f172a] border border-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300">
+      <button onclick="toggleDropdown('exp1')" 
+        class="w-full flex justify-between items-center px-6 py-5 text-left text-white font-sci-fi neon-glow text-xl hover:bg-[#1e293b] transition-all duration-300">
+        Web Development
+        <span id="arrow-exp1" class="transition-transform duration-300">▼</span>
+      </button>
+
+      <div id="content-exp1" class="px-8 pb-4 hidden">
+        <ul class="list-disc text-gray-300 space-y-2 mt-2">
+          <li>I create fast, responsive, user-friendly websites.</li>
+          <li>I turn concepts into clean, functional web solutions.</li>
+          <li>I write efficient, scalable code for modern web apps.</li>
+          <li>I craft intuitive UIs that enhance user experience.</li>
+          <li>I stay updated to deliver future-ready web products.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Dropdown Item -->
+    <div class="bg-[#0f172a] border border-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300">
+      <button onclick="toggleDropdown('exp2')" 
+        class="w-full flex justify-between items-center px-6 py-5 text-left text-white font-sci-fi neon-glow text-xl hover:bg-[#1e293b] transition-all duration-300">
+        Software Quality Assurance
+        <span id="arrow-exp2" class="transition-transform duration-300">▼</span>
+      </button>
+
+      <div id="content-exp2" class="px-8 pb-4 hidden">
+        <ul class="list-disc text-gray-300 space-y-2 mt-2">
+          <li>I ensure software stays stable, reliable, and bug-free.</li>
+          <li>I detect issues early to keep releases smooth.</li>
+          <li>I create clear test cases for real-user scenarios.</li>
+          <li>I focus on risk-based testing for solid quality.</li>
+          <li>I work closely with developers to strengthen every build.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Dropdown Item -->
+    <div class="bg-[#0f172a] border border-gray-700 rounded-2xl shadow-lg overflow-hidden transition-all duration-300">
+      <button onclick="toggleDropdown('exp3')" 
+        class="w-full flex justify-between items-center px-6 py-5 text-left text-white font-sci-fi neon-glow text-xl hover:bg-[#1e293b] transition-all duration-300">
+        Project Management
+        <span id="arrow-exp3" class="transition-transform duration-300">▼</span>
+      </button>
+
+      <div id="content-exp3" class="px-8 pb-4 hidden">
+        <ul class="list-disc text-gray-300 space-y-2 mt-2">
+          <li>I plan and guide projects to keep goals, timelines, and teams aligned.</li>
+          <li>I break work into clear tasks to keep progress steady and predictable.</li>
+          <li>I communicate openly so everyone stays synced and confident.</li>
+          <li>I manage risks early to keep projects on track.</li>
+          <li>I deliver projects with a balance of speed, quality, and clarity.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function toggleDropdown(id) {
+    const content = document.getElementById("content-" + id);
+    const arrow = document.getElementById("arrow-" + id);
+
+    if (content.classList.contains("hidden")) {
+      content.classList.remove("hidden");
+      content.classList.add("animate-slideDown");
+      arrow.style.transform = "rotate(180deg)";
+    } else {
+      content.classList.add("hidden");
+      content.classList.remove("animate-slideDown");
+      arrow.style.transform = "rotate(0deg)";
+    }
+  }
+</script>
+
+<style>
+  @keyframes slideDown {
+    0% { opacity: 0; transform: translateY(-6px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-slideDown {
+    animation: slideDown 0.25s ease-out;
+  }
+</style>
+
+
+<!-- My Achievement Section -->
     <section id="achievements" class="py-20 bg-gray-900">
       <div class="container mx-auto px-4">
         <h2 class="text-4xl font-sci-fi neon-glow mb-8 text-center">
