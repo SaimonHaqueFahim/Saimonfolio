@@ -74,6 +74,47 @@
     }
 }
 
+
+/* Modern Timeline Animation */
+.timeline-item {
+  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.timeline-item.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Alternate side alignment */
+.timeline-item.reverse .order-1 { order: 1; }
+.timeline-item.reverse .order-2 { order: 2; }
+
+/* Glowing timeline dot pulse */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px #00ffff; }
+  50% { box-shadow: 0 0 40px #00ffff, 0 0 60px #00ffff40; }
+}
+
+/* Present badge special glow */
+[data-present="true"] span:last-child {
+  animation: pulse-glow 3s infinite;
+}
+
+/* ===== CRITICAL FIX – Add this to your about.css ===== */
+@media (min-width: 768px) {
+  .reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Optional but recommended – better mobile spacing */
+@media (max-width: 767px) {
+  .timeline-item .ml-16,
+  .timeline-item .mr-16 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
 /* Neon Footer Form */
 .footer-input {
   width: 100%;
