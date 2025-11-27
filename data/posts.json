@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Why I Switched from Create React App to Vite in 2025",
+    "date": "Nov 25, 2025",
+    "readTime": "8 min read",
+    "category": "web-dev",
+    "thumb": "images/blog-images/vite.png",
+    "content": "<h2>The Problem with CRA</h2><p>After building 20+ projects, CRA became too slow...</p><h2>Vite's Lightning Start</h2><p>Hot reload in <strong>50ms</strong> instead of 4 seconds...</p><h2>My Final Setup</h2><p>Tailwind + Vite + React Router = pure bliss</p>"
+  },
+  {
+    "id": 2,
+    "title": "Automated Testing Saved My Job at AeroTrip",
+    "date": "Nov 20, 2025",
+    "readTime": "10 min read",
+    "category": "sqa",
+    "thumb": "images/blog-images/testing.png",
+    "content": "<h2>The Bug That Almost Cost $50K</h2><p>One missed edge case in payment flow...</p><h2>My Selenium + Jenkins Pipeline</h2><p>Now 400+ tests run on every push</p><h2>Results?</h2><p>Bug rate dropped <strong>92%</strong></p>"
+  },
+  {
+    "id": 3,
+    "title": "How I Reduced Sprint Delays by 40% Using Only Jira",
+    "date": "Nov 15, 2025",
+    "readTime": "6 min read",
+    "category": "pm",
+    "thumb": "images/blog-images/jira.png",
+    "content": "<h2>The Old Way</h2><p>Everyone working on everything → chaos</p><h2>My 3 Custom Workflows</h2><p>Blocked → In Review → Done with automation</p><h2>Team Velocity Now?</h2><p>From 24 to 42 story points</p>"
+  },
+  {
+    "id": 4,
+    "title": "Building a Design System in Figma That Developers Actually Use",
+    "date": "Nov 10, 2025",
+    "readTime": "9 min read",
+    "category": "uiux",
+    "thumb": "images/blog-images/figma.png",
+    "content": "<h2>The Gap</h2><p>Designers make beautiful mockups → devs ignore them</p><h2>My Solution</h2><p>Auto-layout + variables + dev mode = perfect handoff</p>"
+  },
+  {
+    "id": 5,
+    "title": "Tailwind CSS Tips I Wish I Knew 3 Years Ago",
+    "date": "Nov 5, 2025",
+    "readTime": "7 min read",
+    "category": "web-dev",
+    "thumb": "images/blog-images/tailwind.png",
+    "content": "<h2>Dark Mode Toggle in 5 Lines</h2><p>class=\"dark\" on html → done</p><h2>Custom Animations</h2><p>@apply + keyframes = magic</p>"
+  },
+  {
+    "id": 6,
+    "title": "The One Testing Strategy Every SQA Engineer Must Know",
+    "date": "Oct 30, 2025",
+    "readTime": "5 min read",
+    "category": "sqa",
+    "thumb": "images/blog-images/strategy.png",
+    "content": "<h2>Risk-Based Testing</h2><p>Stop testing everything. Test what breaks revenue.</p>"
+  },
+  {
+    "id": 7,
+    "title": "From Solo Developer to Project Manager: My Journey",
+    "date": "Oct 25, 2025",
+    "readTime": "12 min read",
+    "category": "pm",
+    "thumb": "images/blog/blog-images/journey.jpg",
+    "content": "<h2>2018:</h2><p>Just writing code</p><h2>2025:</h2><p>Leading 12-person team across 3 timezones</p>"
+  },
+  {
+    "id": 8,
+    "title": "Figma to React: My Zero-Friction Workflow",
+    "date": "Oct 20, 2025",
+    "readTime": "8 min read",
+    "category": "uiux",
+    "thumb": "images/blog/blog-images/figma-react.jpg",
+    "content": "<h2>Step 1:</h2><p>Use Anima or Locofy</p><h2>Step 2:</h2><p>Clean up + add Tailwind</p><h2>Result:</h2><p>90% faster UI delivery</p>"
+  }
+]

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="post-title">Saimon Blog</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "neon-blue": "#00ffff",
+              "dark-bg": "#0a0a0a",
+              "dark-text": "#e0e0e0",
+            },
+            fontFamily: {
+              "sci-fi": ["Orbitron", "sans-serif"],
+              body: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/blog.css" />
+    <link rel="shortcut icon" href="../images/icons/sh-logo.png" />
+
+    <style>
+      .prose code {
+        background: #1a1a1a;
+        padding: 0.2rem 0.4rem;
+        border-radius: 6px;
+      }
+      .prose pre {
+        background: #111 !important;
+        padding: 1rem;
+        border-radius: 12px;
+        border: 1px solid #00ffff30;
+      }
+      .reading-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 4px;
+        background: #00ffff;
+        width: 0%;
+        z-index: 60;
+        transition: width 0.1s;
+      }
+      .toc {
+        position: sticky;
+        top: 100px;
+      }
+      .toc a {
+        color: #888;
+        transition: color 0.3s;
+      }
+      .toc a:hover,
+      .toc a.active {
+        color: #00ffff;
+        text-shadow: 0 0 10px #00ffff;
+      }
+    </style>
+  </head>
+  <body class="bg-dark-bg text-dark-text">
+    <div class="reading-progress" id="progress"></div>
+
+    <!-- Same Navbar as your site -->
+    <nav class="fixed top-0 left-0 w-full bg-dark-bg shadow-md z-50">
+      <div
+        class="container mx-auto px-4 py-6 flex justify-between items-center"
+      >
+        <a href="../index.html" class="flex items-center pl-4">
+          <img
+            src="../images/portfolio_logo.png"
+            alt="logo"
+            class="portfolio-logo"
+          />
+        </a>
+        <div class="flex space-x-6 relative">
+          <a href="index.html" class="hover-animate neon-glow">Home</a>
+          <a href="about.html" class="hover-animate neon-glow">About</a>
+          <div class="relative group">
+            <a href="#" class="hover-animate neon-glow">Projects</a>
+            <div
+              class="slide-menu hidden group-hover:block absolute top-full w-32 bg-dark-bg border border-neon-blue rounded-lg shadow-lg"
+            >
+              <a
+                href="frontend.html"
+                class="block px-4 py-2 text-neon-blue hover:bg-neon-blue hover:text-dark-bg"
+                >Web</a
+              >
+              <a
+                href="sqa.html"
+                class="block px-4 py-2 text-neon-blue hover:bg-neon-blue hover:text-dark-bg"
+                >QA</a
+              >
+            </div>
+          </div>
+          <a href="index.html#skills" class="hover-animate neon-glow">Skills</a>
+          <a href="index.html#expertise" class="hover-animate neon-glow"
+            >Expertise</a
+          >
+          <a href="index.html#achievements" class="hover-animate neon-glow"
+            >Achievements</a
+          >
+          <a
+            href="blog.html"
+            class="hover-animate neon-glow text-neon-blue font-bold"
+            >Blog</a
+          >
+          <a href="contact.html" class="hover-animate neon-glow">Contact</a>
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=mshfahim12@gmail.com&su=Job Opportunity&body=Hello Saimon, I am interested in hiring you."
+            target="_blank"
+            class="hover-animate neon-glow"
+            >Hire Me</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <article
+      class="container mx-auto px-6 pt-32 pb-20 grid grid-cols-1 lg:grid-cols-4 gap-10"
+    >
+      <!-- Main Content -->
+      <div class="lg:col-span-3">
+        <div class="blog-card p-8">
+          <img
+            id="post-thumb"
+            src=""
+            alt=""
+            class="w-full h-96 object-cover rounded-lg mb-8"
+          />
+          <h1
+            id="post-title-h1"
+            class="text-4xl md:text-5xl font-sci-fi neon-glow mb-4"
+          ></h1>
+          <div class="flex items-center gap-6 text-gray-400 mb-8">
+            <span id="post-date"></span> • <span id="post-readtime"></span>
+          </div>
+          <div
+            id="post-content"
+            class="prose prose-invert max-w-none text-lg leading-relaxed"
+          ></div>
+        </div>
+
+        <!-- CTA -->
+        <div
+          class="text-center mt-16 p-10 bg-gradient-to-r from-neon-blue/10 to-transparent rounded-2xl border border-neon-blue/30"
+        >
+          <h3 class="text-3xl font-sci-fi neon-glow mb-4">
+            Enjoyed this post?
+          </h3>
+          <p class="text-xl mb-8">Let's work together on your next project!</p>
+          <a
+            href="../contact.html"
+            class="inline-block px-10 py-4 bg-neon-blue text-black font-bold rounded-full hover:scale-110 transition shadow-neon text-lg"
+            >Hire Me Now</a
+          >
+        </div>
+      </div>
+
+      <!-- Sidebar: ToC + Share -->
+      <aside class="lg:col-span-1">
+        <div
+          class="toc bg-black/40 backdrop-blur-md border border-neon-blue/30 rounded-2xl p-6"
+        >
+          <h3 class="font-sci-fi neon-glow text-xl mb-4">Table of Contents</h3>
+          <div id="toc-links"></div>
+        </div>
+
+        <div
+          class="mt-8 bg-black/40 backdrop-blur-md border border-neon-blue/30 rounded-2xl p-6"
+        >
+          <h3 class="font-sci-fi neon-glow mb-4">Share</h3>
+          <div class="flex gap-4">
+            <a href="#" id="share-linkedin" class="hover:scale-125 transition"
+              ><img src="../images/icons/linkedin-logo.png" class="h-10"
+            /></a>
+            <a href="#" id="share-twitter" class="hover:scale-125 transition"
+              ><img src="../images/icons/x-logo.png" class="h-10"
+            /></a>
+          </div>
+        </div>
+      </aside>
+    </article>
+
+    <!-- Footer (same as your site) -->
+    <footer class="bg-dark-bg border-t border-neon-blue py-16">
+      <div class="container mx-auto px-6 text-center">
+        <p>
+          © 2025
+          <span class="text-neon-blue font-sci-fi">Saimon Haque Fahim</span>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Reading progress
+      window.addEventListener("scroll", () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById("progress").style.width = scrolled + "%";
+      });
+
+      // Load post
+      const urlParams = new URLSearchParams(window.location.search);
+      const postId = urlParams.get("id");
+      fetch("../data/posts.json")
+        .then((r) => r.json())
+        .then((posts) => {
+          const post = posts.find((p) => p.id == postId);
+          if (!post) return alert("Post not found");
+
+          document.title = post.title + " - Saimon Blog";
+          document.getElementById("post-title-h1").textContent = post.title;
+          document.getElementById("post-date").textContent = post.date;
+          document.getElementById("post-readtime").textContent = post.readTime;
+          document.getElementById("post-thumb").src = post.thumb;
+
+          // Render Markdown-like content
+          const content = post.content
+            .replace(
+              /\*\*(.*?)\*\*/g,
+              '<strong class="text-neon-blue">$1</strong>'
+            )
+            .replace(/\n/g, "<br>");
+          document.getElementById("post-content").innerHTML = content;
+
+          // Generate ToC
+          const headings = content.match(/<h2>(.*?)<\/h2>/g) || [];
+          const toc = document.getElementById("toc-links");
+          headings.forEach((h, i) => {
+            const text = h.replace(/<[^>]*>/g, "");
+            const id = "heading-" + i;
+            document.getElementById("post-content").innerHTML = document
+              .getElementById("post-content")
+              .innerHTML.replace(h, `<h2 id="${id}">${text}</h2>`);
+            toc.innerHTML += `<a href="#${id}" class="block py-2 text-sm">${text}</a>`;
+          });
+
+          // Share links
+          const url = encodeURIComponent(window.location.href);
+          const title = encodeURIComponent(post.title);
+          document.getElementById(
+            "share-linkedin"
+          ).href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+          document.getElementById(
+            "share-twitter"
+          ).href = `https://twitter.com/intent/tweet?text=${title}&url=${url}`;
+        });
+    </script>
+  </body>
+</html>
