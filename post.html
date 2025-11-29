@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title id="post-title">Saimon Blog</title>
+    <title id="post-title">Saimon Haque Fahim - Blog</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -34,7 +34,7 @@
     />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/blog.css" />
-    <link rel="shortcut icon" href="../images/icons/sh-logo.png" />
+    <link rel="shortcut icon" href="images/icons/sh-logo.png" />
 
     <style>
       .prose code {
@@ -81,9 +81,9 @@
       <div
         class="container mx-auto px-4 py-6 flex justify-between items-center"
       >
-        <a href="../index.html" class="flex items-center pl-4">
+        <a href="#home" class="flex items-center pl-4">
           <img
-            src="../images/portfolio_logo.png"
+            src="images/portfolio_logo.png"
             alt="logo"
             class="portfolio-logo"
           />
@@ -219,40 +219,64 @@
         document.getElementById("progress").style.width = scrolled + "%";
       });
 
-      // Load post
+      // Load post - FIXED PATH
       const urlParams = new URLSearchParams(window.location.search);
       const postId = urlParams.get("id");
-      fetch("../data/posts.json")
-        .then((r) => r.json())
+
+      if (!postId) {
+        document.body.innerHTML =
+          "<h1 class='text-center text-red-500'>No post ID provided</h1>";
+        console.error("No post ID in URL");
+      }
+
+      fetch("data/posts.json")
+        .then((r) => {
+          if (!r.ok)
+            throw new Error("Failed to load posts.json - 404 or wrong path");
+          return r.json();
+        })
         .then((posts) => {
           const post = posts.find((p) => p.id == postId);
-          if (!post) return alert("Post not found");
+          if (!post) {
+            document.body.innerHTML =
+              "<h1 class='text-center text-red-500'>Post not found!</h1>";
+            return console.error("Post with id " + postId + " not found");
+          }
 
-          document.title = post.title + " - Saimon Blog";
+          document.title = post.title + " - Saimon Haque Fahim";
+          document.getElementById("post-title").textContent =
+            post.title + " - Saimon Haque Fahim";
           document.getElementById("post-title-h1").textContent = post.title;
           document.getElementById("post-date").textContent = post.date;
           document.getElementById("post-readtime").textContent = post.readTime;
           document.getElementById("post-thumb").src = post.thumb;
+          document.getElementById("post-thumb").alt = post.title;
 
-          // Render Markdown-like content
-          const content = post.content
+          // Better content rendering
+          let content = post.content
             .replace(
               /\*\*(.*?)\*\*/g,
               '<strong class="text-neon-blue">$1</strong>'
             )
+            .replace(/\*(.*?)\*/g, '<em class="text-cyan-300">$1</em>')
+            .replace(/\n\n/g, "</p><p>")
             .replace(/\n/g, "<br>");
+
+          // Wrap in paragraphs if needed
+          if (!content.includes("<p>") && !content.includes("<h2>")) {
+            content = "<p>" + content + "</p>";
+          }
+
           document.getElementById("post-content").innerHTML = content;
 
-          // Generate ToC
-          const headings = content.match(/<h2>(.*?)<\/h2>/g) || [];
+          // Generate Table of Contents
+          const headings = [...document.querySelectorAll("h2")];
           const toc = document.getElementById("toc-links");
+          toc.innerHTML = "";
           headings.forEach((h, i) => {
-            const text = h.replace(/<[^>]*>/g, "");
             const id = "heading-" + i;
-            document.getElementById("post-content").innerHTML = document
-              .getElementById("post-content")
-              .innerHTML.replace(h, `<h2 id="${id}">${text}</h2>`);
-            toc.innerHTML += `<a href="#${id}" class="block py-2 text-sm">${text}</a>`;
+            h.id = id;
+            toc.innerHTML += `<a href="#${id}" class="block py-2 text-sm hover:text-neon-blue transition">${h.textContent}</a>`;
           });
 
           // Share links
@@ -263,7 +287,13 @@
           ).href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
           document.getElementById(
             "share-twitter"
-          ).href = `https://twitter.com/intent/tweet?text=${title}&url=${url}`;
+          ).href = `https://x.com/intent/tweet?text=${title}&url=${url}`;
+        })
+        .catch((err) => {
+          console.error("Error loading post:", err);
+          document.getElementById(
+            "post-content"
+          ).innerHTML = `<p class="text-red-400">Error loading post. Please check if <code>data/posts.json</code> exists.</p><p>Details: ${err.message}</p>`;
         });
     </script>
   </body>
